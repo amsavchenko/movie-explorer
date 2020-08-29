@@ -1,0 +1,66 @@
+
+<html>
+<style>
+   @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Playfair+Display+SC');
+   a:link { color: #2272ae;  text-decoration: none;}
+   a:visited { color: #2272ae;  text-decoration: none; }
+   a:hover { text-decoration: underline; }
+   a:active { color: blue; }
+   <!-- type="text/css">
+	#wrap {
+     width:1000px;
+     margin:0 auto;
+	}
+	#left_col {
+	 line-height: 0.5; text-align:center;
+	 font-size: 180%; font-color: black;
+     float:left;
+     width:650px;
+	}
+	#right_col {
+	 line-height: 0.5; text-align:center;
+	 font-size: 180%; font-color: black;
+     float:right;
+     width:650px;
+	}
+</style>
+
+ <body style="background-color:#f0f0f0; font-family:Crimson Text, serif;">
+
+ 	<p style="color:#d08e47; font-size:300%; background-color:#38322e; text-align:center; line-height: 82px; height: 90px; letter-spacing: 3px; font-family: Playfair Display SC, serif; " > movie explorer </p>
+
+ 	<p style="text-align: center;">
+  	<a style="font-size: 190%; line-height: 5px; height: 5px; text-align: center;  color: black; " href=
+  	"http://127.0.0.1:5000/"> Return to the main page </a>
+    </p>
+
+    <p style="text-align:center; font-size: 280%; line-height: 5px; height: 5px;"> Recommendations for movie <i> {{title}} </i>: </p>
+    <br/>
+ 	<div id="wrap">
+    	<div id="left_col">
+			 {% for id in id_list1 %}
+			 	{% if name_list[id] !=  title %}
+  		 	 <p> 
+  		 	 <a href= {{ link_list[id] }} > {{ name_list[id] }} </a> 
+  		 	 </p>
+  		 	 	{% endif %}
+  			 {% endfor %}
+    	</div>
+
+    	<div id="right_col">
+    		 {% for id in id_list2 %}
+  		 	 <p> 
+  		 	 <a href={{ link_list[id] }}> {{ name_list[id] }} </a> 
+  		 	 </p>
+  			 {% endfor %}
+  		</div>
+  	</div> 
+  	
+  	
+  	
+  	
+
+ </body>
+
+
+</html>
